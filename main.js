@@ -24,13 +24,26 @@ function countBatteriesByUsage(cycles) {
   };
 }
 
-function testBucketingByNumberOfCycles() {
+function testBucketingByNumberOfCycles_test_1() {
   console.log('Counting batteries by usage cycles...')
   counts = countBatteriesByUsage([100, 300, 500, 600, 900, 1000]);
   assert(counts["lowCount"] == 2);
   assert(counts["mediumCount"] == 3);
   assert(counts["highCount"] == 1);
-  console.log("Done counting :)");
+  console.log("Finished 1");
 }
 
-testBucketingByNumberOfCycles();
+function testBucketingByNumberOfCycles_test_2() {
+  console.log('Counting batteries by usage cycles...')
+  counts = countBatteriesByUsage([0, -300, 310, 930, 900, 1000]);
+  assert(counts["lowCount"] == 1);
+  assert(counts["mediumCount"] == 2);
+  assert(counts["highCount"] == 2);
+  console.log("Finished 2");
+}
+
+testBucketingByNumberOfCycles_test_1();
+testBucketingByNumberOfCycles_test_2();
+console.log("Executed all test cases")
+
+
