@@ -42,8 +42,13 @@ function testBucketingByNumberOfCycles_test_2() {
   console.log("Finished 2");
 }
 
-testBucketingByNumberOfCycles_test_1();
-testBucketingByNumberOfCycles_test_2();
-console.log("Executed all test cases")
+try {
+  testBucketingByNumberOfCycles_test_1();
+  testBucketingByNumberOfCycles_test_2();
+  console.log("Executed all test cases successfully")
+} catch (err) {
+  console.log("Error: some test cases failed");
+}
+
 
 
